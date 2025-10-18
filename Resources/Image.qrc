@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Image/GeekNote.png</file>
+        <file>Image/SplashScreen.png</file>
+    </qresource>
+</RCC>
