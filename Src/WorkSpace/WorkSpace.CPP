@@ -1,4 +1,4 @@
-#include "../Include/WorkSpace.HPP"
+#include "../../Include/WorkSpace/WorkSpace.HPP"
 
 #include <QSettings>
 #include <QTimer>

@@ -6,7 +6,7 @@
 
 #include "../Include/SplashScreen.HPP"
 #include "../Include/ApplicationInitialize.HPP"
-#include "../Include/WorkSpace.HPP"
+#include "../Include/WorkSpace/WorkSpace.HPP"
 
 int main(int argc, char *argv[])
 {

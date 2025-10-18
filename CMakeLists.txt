@@ -18,13 +18,13 @@ set(PROJECT_SOURCES
         Include/Widget.HPP
         Include/SplashScreen.HPP
         Include/ApplicationInitialize.HPP
-        Include/WorkSpace.HPP
+        Include/WorkSpace/WorkSpace.HPP
 
         Src/Main.CPP
         Src/Widget.CPP
         Src/SplashScreen.CPP
         Src/ApplicationInitialize.CPP
-        Src/WorkSpace.CPP
+        Src/WorkSpace/WorkSpace.CPP
         ${TS_FILES}
 )
 
