@@ -2,6 +2,7 @@
 #include <QLocale>
 #include <QTranslator>
 #include <QScreen>
+#include <QTimer>
 
 #include "../Include/SplashScreen.HPP"
 #include "../Include/ApplicationInitialize.HPP"
@@ -35,14 +36,16 @@ int main(int argc, char *argv[])
     ApplicationInitialize Initialize;
 
     QObject::connect(&Initialize, &ApplicationInitialize::Finish, &APP, [&Splash, &Initialize]() {
-        WorkSpace* WS = new WorkSpace(Initialize.Settings());
-        QScreen* Screen = QGuiApplication::primaryScreen();
-        QRect screenGeometry = Screen->geometry();
-        int X = (screenGeometry.width() - WS->width()) / 2;
-        int Y = (screenGeometry.height() - WS->height()) / 2;
-        WS->move(X, Y);
-        WS->show();
-        Splash.finish(WS);
+        QTimer::singleShot(3000, &Splash, [&Splash, &Initialize]() {
+            WorkSpace* WS = new WorkSpace(Initialize.Settings());
+            QScreen* Screen = QGuiApplication::primaryScreen();
+            QRect screenGeometry = Screen->geometry();
+            int X = (screenGeometry.width() - WS->width()) / 2;
+            int Y = (screenGeometry.height() - WS->height()) / 2;
+            WS->move(X, Y);
+            WS->show();
+            Splash.finish(WS);
+        });
     }, Qt::QueuedConnection);
 
     Initialize.Initialize();

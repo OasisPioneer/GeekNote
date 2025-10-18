@@ -15,10 +15,6 @@ void ApplicationInitialize::Initialize(){
 
 void ApplicationInitialize::ReadConfig(){
     Setting = new QSettings("Styx Studio", "Geek Note");
-    for (int i = 0; i < 5; ++i) {
-        qDebug() << "加载步骤" << i+1;
-        QThread::sleep(1);
-    }
 }
 
 ApplicationInitialize::~ApplicationInitialize() {}
