@@ -33,8 +33,6 @@ GeekNote
   <!-- <b>A modular Telegram bot framework for C++ developers.</b> -->
 </p>
 
-## Describe
-
 ## 💖 Sincere thanks
 
 ### Contributors to this project
