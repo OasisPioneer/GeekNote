@@ -29,31 +29,25 @@
 GeekNote
 </h1>
 
-<p align="center">
-  <!-- <b>A modular Telegram bot framework for C++ developers.</b> -->
-</p>
+## 💖 由衷感谢
 
-## Describe
-
-## 💖 Sincere thanks
-
-### Contributors to this project
+### 本项目贡献者
 
 <a href="https://github.com/OasisPioneer/GeekNote/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=OasisPioneer/GeekNote" />
 </a>
 
-## ❤️ Sponsoring
+## ❤️ 赞助我们
 
 * [BTC] `1C9L21Y4VTbeVeTnccyhZb6ziJfdpyQswz`
 * [USDT-TRC20] `TGMPjDRU92JYjidTu6tRuqZezqrNhWZcYS`
 
 <img alt="Sponsor" align="center" src="/Docs/Sponsor.png"/>
 
-## 💬 Communication and Feedback
-[![Telegram Channel](https://img.shields.io/badge/Telegram-JoinChannel-blue?style=for-the-badge&logo=telegram)](https://t.me/StyxCommunity)
+## 💬 交流反馈
+[![Telegram Channel](https://img.shields.io/badge/Telegram-加入频道-blue?style=for-the-badge&logo=telegram)](https://t.me/StyxCommunity)
 
-<p align="right"><a href="#README-TOP"><img src="https://img.shields.io/badge/Back to top-555555?style=for-the-badge"></a></p>
+<p align="right"><a href="#README-TOP"><img src="https://img.shields.io/badge/回到顶部-555555?style=for-the-badge"></a></p>
 
 ## Star History
 
