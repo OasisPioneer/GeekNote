@@ -19,6 +19,7 @@ RightPanel::RightPanel(QSettings* Setting, QWidget* Parent)
     : Setting_(Setting), QWidget(Parent) {
     setObjectName("RightPanel");
     // setAutoFillBackground(true);
+    setAttribute(Qt::WA_StyledBackground);
 
     QVBoxLayout* MainLayout = new QVBoxLayout(this);
 
@@ -26,6 +27,7 @@ RightPanel::RightPanel(QSettings* Setting, QWidget* Parent)
     QLabel* SearchIcon = new QLabel;
     SearchIcon->setPixmap(QPixmap(":/Image/search.svg").scaled(20, 20));
     SearchBox = new QLineEdit;
+    SearchBox->setObjectName("SearchBox");
     SearchBox->setPlaceholderText(tr("SearchProject"));
     QPushButton* NewButton = new QPushButton(tr("New"));
     QPushButton* OpenButton = new QPushButton(tr("Open"));
@@ -37,6 +39,7 @@ RightPanel::RightPanel(QSettings* Setting, QWidget* Parent)
 
     // 滚动项目区
     QScrollArea* ScrollArea = new QScrollArea;
+    ScrollArea->setObjectName("ScrollArea");
     QWidget* ScrollWidget = new QWidget;
     ScrollLayout = new QVBoxLayout(ScrollWidget);
     ScrollWidget->setLayout(ScrollLayout);

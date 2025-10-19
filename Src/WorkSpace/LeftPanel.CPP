@@ -13,6 +13,9 @@
 LeftPanel::LeftPanel(QSettings* Setting, QWidget* Parent) : Setting_(Setting), QWidget(Parent){
     setObjectName("LeftPanel");
     // setAutoFillBackground(true);
+    setAttribute(Qt::WA_StyledBackground);
+    setFixedWidth(200);
+    setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
 
     QVBoxLayout* MainLayout = new QVBoxLayout(this);
 
@@ -29,15 +32,17 @@ LeftPanel::LeftPanel(QSettings* Setting, QWidget* Parent) : Setting_(Setting), Q
     NameVersionLayout->addWidget(NameLabel);
     NameVersionLayout->addWidget(VersionLabel);
     NameVersionLayout->setSpacing(2);
-    NameVersionLayout->setAlignment(Qt::AlignTop);
+    NameVersionLayout->setAlignment(Qt::AlignVCenter);
 
     QHBoxLayout* LogoLayout = new QHBoxLayout;
     LogoLayout->addWidget(LOGO);
     LogoLayout->addLayout(NameVersionLayout);
-    LogoLayout->setSpacing(10);
-    LogoLayout->setAlignment(Qt::AlignVCenter);
+    LogoLayout->setSpacing(5);
+    LogoLayout->setContentsMargins(0, 0, 0, 0);
+    LogoLayout->setAlignment(Qt::AlignLeft);
 
     QPushButton* ProjectButton = new QPushButton(tr("Project"));
+    ProjectButton->setObjectName("ProjectPage");
     // NOTE: 这里后续可能会增加其它按钮
 
     OptionsMenuButton = new QPushButton;

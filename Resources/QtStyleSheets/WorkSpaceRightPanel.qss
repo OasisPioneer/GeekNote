@@ -1,3 +1,7 @@
 RightPanel#RightPanel {
-    background-color: #ffffff !important;
+    background-color: #2a2a2a;
+}
+
+#SearchBox, #ScrollArea {
+    border: none;
 }
