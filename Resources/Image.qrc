@@ -2,5 +2,7 @@
     <qresource prefix="/">
         <file>Image/GeekNote.png</file>
         <file>Image/SplashScreen.png</file>
+        <file>Image/search.svg</file>
+        <file>Image/settings.svg</file>
     </qresource>
 </RCC>

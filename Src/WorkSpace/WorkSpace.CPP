@@ -1,14 +1,27 @@
 #include "../../Include/WorkSpace/WorkSpace.HPP"
+#include "../../Include/WorkSpace/LeftPanel.HPP"
+#include "../../Include/WorkSpace/RightPanel.HPP"
 
 #include <QSettings>
 #include <QTimer>
 #include <QCloseEvent>
 #include <QEvent>
+#include <QHBoxLayout>
 #include <QWindowStateChangeEvent>
 
 WorkSpace::WorkSpace(QSettings* Settings, QWidget* Parent) : Setting(Settings), QWidget(Parent)
 {
     this->setWindowTitle(tr("Work Space"));
+    setAutoFillBackground(false);
+
+    QHBoxLayout* OverallLayout = new QHBoxLayout(this);
+    LeftPanel* Left = new LeftPanel(Setting, this);
+    RightPanel* Right = new RightPanel(Setting, this);
+
+    OverallLayout->setSpacing(0);
+    OverallLayout->setContentsMargins(0, 0, 0, 0);
+    OverallLayout->addWidget(Left);
+    OverallLayout->addWidget(Right, 1);
 
     // this->resize(800, 600);
     // resize(Settings->value("Window/Size", QSize(800, 600)).toSize());

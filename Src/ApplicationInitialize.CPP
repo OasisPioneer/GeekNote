@@ -17,4 +17,6 @@ void ApplicationInitialize::ReadConfig(){
     Setting = new QSettings("Styx Studio", "Geek Note");
 }
 
-ApplicationInitialize::~ApplicationInitialize() {}
+ApplicationInitialize::~ApplicationInitialize() {
+    delete Setting;
+}

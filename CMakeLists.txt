@@ -19,12 +19,18 @@ set(PROJECT_SOURCES
         Include/SplashScreen.HPP
         Include/ApplicationInitialize.HPP
         Include/WorkSpace/WorkSpace.HPP
+        Include/WorkSpace/LeftPanel.HPP
+        Include/WorkSpace/RightPanel.HPP
+        Include/Utility/LoadingStyles.HPP
 
         Src/Main.CPP
         Src/Widget.CPP
         Src/SplashScreen.CPP
         Src/ApplicationInitialize.CPP
         Src/WorkSpace/WorkSpace.CPP
+        Src/WorkSpace/LeftPanel.CPP
+        Src/WorkSpace/RightPanel.CPP
+        Src/Utility/LoadingStyles.CPP
         ${TS_FILES}
 )
 
@@ -34,6 +40,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
         Resources/Language.qrc
         Resources/Image.qrc
+        Resources/QtStyleSheets.qrc
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET GeekNote APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>QtStyleSheets/WorkSpaceLeftPanel.qss</file>
+        <file>QtStyleSheets/WorkSpaceRightPanel.qss</file>
+    </qresource>
+</RCC>

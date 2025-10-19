@@ -9,7 +9,7 @@ class ApplicationInitialize : public QObject{
     Q_OBJECT
     public:
         explicit ApplicationInitialize(QObject* Parent = nullptr);
-        ~ApplicationInitialize();
+        ~ApplicationInitialize() override;
 
         void Initialize();
         QSettings* Settings() const { return Setting; }
