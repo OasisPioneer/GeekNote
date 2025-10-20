@@ -7,7 +7,7 @@ LeftPanel#LeftPanel {
 #NoteRepo {
     border: 1 solid transparent;
     border-radius: 5px;
-    height: 32px;
+    height: 48px;
 }
 
 #NoteRepo:checked {

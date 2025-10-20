@@ -15,6 +15,8 @@ class NoteRepo : public QWidget{
         void LoadProject();
     private:
         QWidget* CreateProjectCard(const QString& Icon, const QString& Name, const QString& Path);
+        bool eventFilter(QObject *obj, QEvent *e) override;
+
         QSettings* Setting_;
         QVBoxLayout* ScrollLayout;
         QLineEdit* SearchBox;

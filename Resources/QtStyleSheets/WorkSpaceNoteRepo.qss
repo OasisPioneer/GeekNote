@@ -5,3 +5,20 @@ NoteRepo#NoteRepo {
 #SearchBox, #ScrollArea {
     border: none;
 }
+
+#SettingsButton {
+    qproperty-iconSize: 20px;
+    opacity: 0;
+}
+
+#NoteCard, #SettingsButton {
+    border: none;
+    background-color: transparent;
+}
+
+#NoteCard:hover, #SettingsButton {
+    opacity: 1;
+    background-color: #303030;
+}
+
+

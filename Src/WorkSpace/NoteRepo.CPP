@@ -55,7 +55,7 @@ NoteRepo::NoteRepo(QSettings* Setting, QWidget* Parent)
 }
 
 void NoteRepo::LoadProject() {
-    QString JsonPath = Setting_->value(QCoreApplication::applicationName() + "/ProjectsFile", "projects.json").toString();
+    QString JsonPath = Setting_->value(QCoreApplication::applicationName() + "/NoteRepoConfigFilePath", "NoteRepoConfigFile.json").toString();
     QFile File(JsonPath);
     if (!File.open(QIODevice::ReadOnly)) return;
 
@@ -75,6 +75,7 @@ void NoteRepo::LoadProject() {
 
 QWidget* NoteRepo::CreateProjectCard(const QString& Icon, const QString& Name, const QString& Path) {
     QWidget* Card = new QWidget;
+    Card->setObjectName("NoteCard");
     QHBoxLayout* Layout = new QHBoxLayout(Card);
 
     QLabel* IconLabel = new QLabel;
@@ -88,13 +89,40 @@ QWidget* NoteRepo::CreateProjectCard(const QString& Icon, const QString& Name, c
     InfoLayout->addWidget(PathLabel);
 
     QToolButton* SettingsButton = new QToolButton;
+    SettingsButton->setObjectName("SettingsButton");
     SettingsButton->setIcon(QIcon(":/Image/settings.svg"));
     SettingsButton->setToolTip(tr("ProjectSettings"));
+    SettingsButton->setVisible(false);
 
     Layout->addWidget(IconLabel);
     Layout->addLayout(InfoLayout, 1);
     Layout->addWidget(SettingsButton);
 
-    Card->setStyleSheet("QWidget { border: 1px solid #ccc; border-radius: 5px; padding: 8px; }");
+    Card->setCursor(Qt::PointingHandCursor);
+
+    Card->installEventFilter(this);
+    Card->setProperty("Name", Name);
+    Card->setProperty("Path", Path);
+
     return Card;
+}
+
+bool NoteRepo::eventFilter(QObject *obj, QEvent *e) {
+    if (obj->objectName() == "NoteCard") {
+        QWidget* card = qobject_cast<QWidget*>(obj);
+        if (!card) return false;
+
+        QToolButton* settingsBtn = card->findChild<QToolButton*>("SettingsButton");
+        if (!settingsBtn) return false;
+
+        if (e->type() == QEvent::Enter) {
+            settingsBtn->setVisible(true);
+            return true;
+        } else if (e->type() == QEvent::Leave) {
+            settingsBtn->setVisible(false);
+            return true;
+        }
+    }
+
+    return QWidget::eventFilter(obj, e);
 }
