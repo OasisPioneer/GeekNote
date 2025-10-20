@@ -18,7 +18,6 @@
 NoteRepo::NoteRepo(QSettings* Setting, QWidget* Parent)
     : Setting_(Setting), QWidget(Parent) {
     setObjectName("NoteRepo");
-    // setAutoFillBackground(true);
     setAttribute(Qt::WA_StyledBackground);
 
     QVBoxLayout* MainLayout = new QVBoxLayout(this);
@@ -37,7 +36,6 @@ NoteRepo::NoteRepo(QSettings* Setting, QWidget* Parent)
     TopLayout->addWidget(NewButton);
     TopLayout->addWidget(OpenButton);
 
-    // 滚动项目区
     QScrollArea* ScrollArea = new QScrollArea;
     ScrollArea->setObjectName("ScrollArea");
     QWidget* ScrollWidget = new QWidget;
