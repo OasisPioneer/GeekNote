@@ -1,5 +1,5 @@
-#ifndef RIGHTPANEL_HPP
-#define RIGHTPANEL_HPP
+#ifndef NOTEREPO_HPP
+#define NOTEREPO_HPP
 
 #include <QWidget>
 #include <QSettings>
@@ -8,10 +8,10 @@ class QLineEdit;
 class QScrollArea;
 class QVBoxLayout;
 
-class RightPanel : public QWidget{
+class NoteRepo : public QWidget{
     Q_OBJECT
     public:
-        explicit RightPanel(QSettings* Setting, QWidget* Parent = nullptr);
+        explicit NoteRepo(QSettings* Setting, QWidget* Parent = nullptr);
         void LoadProject();
     private:
         QWidget* CreateProjectCard(const QString& Icon, const QString& Name, const QString& Path);
@@ -20,4 +20,4 @@ class RightPanel : public QWidget{
         QLineEdit* SearchBox;
 };
 
-#endif // RIGHTPANEL_HPP
+#endif // NOTEREPO_HPP

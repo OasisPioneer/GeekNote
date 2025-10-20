@@ -1,12 +1,13 @@
 #include "../../Include/WorkSpace/WorkSpace.HPP"
 #include "../../Include/WorkSpace/LeftPanel.HPP"
-#include "../../Include/WorkSpace/RightPanel.HPP"
+#include "../../Include/WorkSpace/NoteRepo.HPP"
 
 #include <QSettings>
 #include <QTimer>
 #include <QCloseEvent>
 #include <QEvent>
 #include <QHBoxLayout>
+#include <QStackedWidget>
 #include <QWindowStateChangeEvent>
 
 WorkSpace::WorkSpace(QSettings* Settings, QWidget* Parent) : Setting(Settings), QWidget(Parent)
@@ -15,13 +16,25 @@ WorkSpace::WorkSpace(QSettings* Settings, QWidget* Parent) : Setting(Settings), 
     setAutoFillBackground(false);
 
     QHBoxLayout* OverallLayout = new QHBoxLayout(this);
+
     LeftPanel* Left = new LeftPanel(Setting, this);
-    RightPanel* Right = new RightPanel(Setting, this);
+    OverallLayout->addWidget(Left);
+
+    QStackedWidget* Right = new QStackedWidget(this);
+    OverallLayout->addWidget(Right, 1);
+
+    NoteRepo* Panel = new NoteRepo(Setting, this);
+
+    Right->addWidget(Panel);
+
+    connect(Left, &LeftPanel::SwitchPages, Right, &QStackedWidget::setCurrentIndex);
+    connect(Left, &LeftPanel::SwitchPages, Left, &LeftPanel::SettingActivitiePage);
+
 
     OverallLayout->setSpacing(0);
     OverallLayout->setContentsMargins(0, 0, 0, 0);
-    OverallLayout->addWidget(Left);
-    OverallLayout->addWidget(Right, 1);
+
+
 
     // this->resize(800, 600);
     // resize(Settings->value("Window/Size", QSize(800, 600)).toSize());

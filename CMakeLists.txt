@@ -20,7 +20,7 @@ set(PROJECT_SOURCES
         Include/ApplicationInitialize.HPP
         Include/WorkSpace/WorkSpace.HPP
         Include/WorkSpace/LeftPanel.HPP
-        Include/WorkSpace/RightPanel.HPP
+        Include/WorkSpace/NoteRepo.HPP
         Include/Utility/LoadingStyles.HPP
 
         Src/Main.CPP
@@ -29,7 +29,7 @@ set(PROJECT_SOURCES
         Src/ApplicationInitialize.CPP
         Src/WorkSpace/WorkSpace.CPP
         Src/WorkSpace/LeftPanel.CPP
-        Src/WorkSpace/RightPanel.CPP
+        Src/WorkSpace/NoteRepo.CPP
         Src/Utility/LoadingStyles.CPP
         ${TS_FILES}
 )

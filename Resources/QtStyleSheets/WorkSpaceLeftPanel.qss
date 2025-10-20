@@ -4,15 +4,14 @@ LeftPanel#LeftPanel {
 
 
 
-#ProjectPage {
+#NoteRepo {
     border: 1 solid transparent;
     border-radius: 5px;
     height: 32px;
 }
 
-#ProjectPage:pressed {
+#NoteRepo:checked {
     background-color: #4A4A4A;
-    border-radius: 5px;
 }
 
 QPushButton#OptionsMenuButton {

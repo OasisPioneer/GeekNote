@@ -1,6 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>QtStyleSheets/WorkSpaceLeftPanel.qss</file>
-        <file>QtStyleSheets/WorkSpaceRightPanel.qss</file>
+        <file>QtStyleSheets/WorkSpaceNoteRepo.qss</file>
     </qresource>
 </RCC>

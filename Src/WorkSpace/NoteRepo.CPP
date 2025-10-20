@@ -1,4 +1,4 @@
-#include "../../Include/WorkSpace/RightPanel.HPP"
+#include "../../Include/WorkSpace/NoteRepo.HPP"
 #include "../../Include/Utility/LoadingStyles.HPP"
 
 #include <QApplication>
@@ -15,9 +15,9 @@
 #include <QToolButton>
 
 
-RightPanel::RightPanel(QSettings* Setting, QWidget* Parent)
+NoteRepo::NoteRepo(QSettings* Setting, QWidget* Parent)
     : Setting_(Setting), QWidget(Parent) {
-    setObjectName("RightPanel");
+    setObjectName("NoteRepo");
     // setAutoFillBackground(true);
     setAttribute(Qt::WA_StyledBackground);
 
@@ -51,10 +51,10 @@ RightPanel::RightPanel(QSettings* Setting, QWidget* Parent)
 
     LoadProject();
 
-    LoadingStyles(this, ":/QtStyleSheets/WorkSpaceRightPanel.qss");
+    LoadingStyles(this, ":/QtStyleSheets/WorkSpaceNoteRepo.qss");
 }
 
-void RightPanel::LoadProject() {
+void NoteRepo::LoadProject() {
     QString JsonPath = Setting_->value(QCoreApplication::applicationName() + "/ProjectsFile", "projects.json").toString();
     QFile File(JsonPath);
     if (!File.open(QIODevice::ReadOnly)) return;
@@ -73,7 +73,7 @@ void RightPanel::LoadProject() {
     ScrollLayout->addStretch();
 }
 
-QWidget* RightPanel::CreateProjectCard(const QString& Icon, const QString& Name, const QString& Path) {
+QWidget* NoteRepo::CreateProjectCard(const QString& Icon, const QString& Name, const QString& Path) {
     QWidget* Card = new QWidget;
     QHBoxLayout* Layout = new QHBoxLayout(Card);
 
